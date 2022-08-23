@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Css Files -->
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      button {
+        cursor: pointer !important;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        opacity: 0.7;
+      }
+
+      input {
+        outline: none;
+        border: none;
+        background: none;
+      }
+
+      .counters {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+      }
+    </style>
+
+    <!-- Js Files -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/redux@4.2.0/dist/redux.min.js"></script>
+
+    <title>Redux Counter</title>
+  </head>
+  <body class="bg-[#0f172a]">
+    <section class="hero">
+      <div
+        class="min-h-[100vh] container py-20 mx-auto flex flex-col justify-center items-center"
+      >
+        <h1
+          class="relative z-10 mb-10 text-4xl font-bold text-center text-white"
+        >
+          Redux Counter <br />
+          <span class="text-[#38bdf8]">Application</span>
+        </h1>
+
+        <button
+          class="relative z-10 mb-5 mr-2 w-[120px] py-3 bg-red-500 rounded-lg text-base font-medium text-center text-white"
+          onclick="reset()"
+        >
+          Reset
+        </button>
+
+        <div class="counters"></div>
+
+        <button
+          class="mt-5 w-[30px] h-[30px] rounded-[50%] bg-green-500 text-white"
+          onclick="add()"
+        >
+          <span class="inline-block" style="margin-bottom: 3px">+</span>
+        </button>
+
+        <div
+          class="absolute left-[28%] top-28 pointer-events-none hidden rotate-12 rounded-3xl bg-sky-800 opacity-90 blur-3xl filter dark:opacity-30 lg:h-32 lg:w-[450px] dark:lg:block xl:h-44 xl:w-[600px]"
+        ></div>
+
+        <div
+          class="absolute right-[28%] top-0 pointer-events-none hidden h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-blue-600 to-sky-400 opacity-20 blur-3xl filter dark:block dark:opacity-30 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"
+        ></div>
+
+        <div
+          class="absolute bottom-44 -left-64 pointer-events-none hidden h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-800 opacity-30 blur-3xl filter dark:block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 lg:opacity-20 xl:h-40 xl:w-[400px]"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Js Files -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
